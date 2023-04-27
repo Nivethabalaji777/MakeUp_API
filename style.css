@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  line-height: 1.6rem;
+  font-family: "Calibri", sans-serif;
+  background-image: url(brush2.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.heading {  
+  padding: 50px;
+  margin-left: 20%;
+  background-size: contain;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  position: -webkit-sticky;
+  top: 0;
+  right: 0;
+  position: sticky;
+  background-image: url("cosmetics_logo3.png") ;
+}
+
+#loading {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid dodgerblue;
+  border-radius: 100%;
+  margin: 10rem auto;
+  display: none;
+  animation: spin 1s infinite linear;
+}
+
+#loading.display {
+  display: block;
+}
+
+.container {
+  width: 80%;
+  max-width: 60rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 3rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 10px rgba(198, 197, 197, 0.705);
+  transition: 0.2s all;
+  pointer-events: none;
+  border-radius: 20px;
+  background-color: rgba(254, 255, 218, 0.673);
+}
+
+.product-image {
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 300px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px
+}
+
+.card-content {
+  margin: 0.8rem 1.6rem;
+}
+
+.product-brand {
+  color: #3503fb;
+}
+
+.product-name {
+  font-size: 1.4rem;
+}
+
+.product-description {
+  margin: 1.2 rem 0;
+  color: #303030;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.product-price {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.product-price::before {
+  content: "$";
+  margin-right: 4px;
+}
+
+.button {
+  font-weight: bold;
+  padding: 0.5rem 1.2rem;
+  background: #5e5e5e;
+  color: white;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  border: none;
+  pointer-events: auto;
+}
+
+.button:hover,
+.button:active {
+  background:rgb(41, 255, 30);
+}
+
+.navigation {
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.navigation .button {
+  margin: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    width: 100%;
+    /* padding: 50px; */
+    padding-bottom: 8%;
+    
+    margin-left: 0;
+    margin-right: 0;
+    background-repeat: no-repeat;
+    
+  }
+  .container {
+    margin: 6rem auto;
+  }
+
+  .card {
+    pointer-events: auto;
+  }
+
+  .product-description {
+    display: none;
+  }
+
+  .card:hover,
+  .card:active {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.backdrop {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.backdrop.display {
+  display: block;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  height: 80%;
+  overflow-y: scroll;
+  transform: translate(-50%, 15%);
+  width: 80%;
+  max-width: 80ch;
+  display: none;
+  z-index: 200;
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.modal.display {
+  display: block;
+}
+
+.modal-product-image {
+  display: inline-block;
+  width: 45%;
+  vertical-align: middle;
+}
+
+.modal-product-image img {
+  display: block;
+  width: 100%;
+  max-height: 450px;
+  padding: 1rem;
+}
+
+.modal-product-info {
+  display: inline-block;
+  width: 50%;
+  padding: 2rem;
+  vertical-align: top;
+}
+
+.modal .product-description {
+  display: block;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.6rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+}
